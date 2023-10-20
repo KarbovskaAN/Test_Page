@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  
+<!--Атрибут method (HTML тега <form>) определяет, какой метод HTTP (<get> или <post>) используется при передаче формы.
+Форм-данные могут быть отправлены в качестве URL переменных (с помощью method="get") или как HTTP POST транзакции (method="post").-->
+
+<form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="POST">
+
+  <!--Элемент <fieldset> предназначен для группирования элементов формы.-->
+
+  <fieldset class="fieldset">
+    
+    <!--legend - применяется для создания заголовка группы элементов формы, которая определяется с помощью <fieldset>-->
+    <!--Группа элементов обозначается в браузере с помощью рамки, а текст, который располагается внутри контейнера <legend>, встраивается в эту рамку-->
+
+    <legend>Personal information</legend>
+
+    <!-- label - устанавливает связь между определённой меткой, в качестве которой обычно выступает текст, и элементом формы-->
+    <!--(<input>, <select>, <textarea>). Такая связь необходима, чтобы изменять значения элементов формы при щелчке курсором мыши на текст-->
+    <!--обеспечивает навигацию с помощью клавиатуры для формы-->
+
+    <label class="row">
+     Surname:
+     <input type="text" name="surname" required> <!--required - форма не будет отправлена, так как поле обязательно к заполнению-->
+   </label>
+
+   <label class="row">
+     Name:
+     <input type="text" name="name" required>
+   </label>
+
+   <label class="row">
+     How old are You?
+     <input type="number" name="age" value="18" min="1" max="100" required>
+   </label>
+
+   <label class="row">
+     Full date of birth:
+     <input type="date" name="birthday" required>
+   </label>
+
+   <label class="row">
+     I accept the term of the agreement
+     <input type="checkbox" name="accepted" value="yes" required>
+   </label>
+
+</fieldset>
+
+<fieldset class="fieldset">
+
+  <legend>Registration</legend>
+
+    <label class="row">
+      E-mail:
+      <input type="email" name="email" placeholder="email@example.com" required>
+    </label>
+
+    <label class="row">
+      Password:
+      <input type="password" name="password" minlength="6" maxlength="30" required>
+    </label>
+
+</fieldset>
+
+<fieldset class="fieldset">
+
+  <legend>An interesting fact about you!</legend>
+  
+    <label class="row">
+      Do you love cats?
+      <label>
+        <input type="radio" name="answer" value="yes">
+      Yes
+      </label>
+
+      <label>
+        <input type="radio" name="answer" value="no">
+      No
+      </label>
+    </label>
+
+    <label class="row">
+      What is your favorite color?
+        <input type="color" name="color" required>
+    </label>
+
+    <label class="row">
+      What time do you go to bed?
+      <input type="time" name="time" required>
+    </label>
+
+    <label class="row">
+      What are your favorite btand of cars?
+      <select name="cars" required multiple>
+        <option value="bmv">BMW</option>
+        <option value="audi">Audi</option>
+        <option value="skoda">Skoda</option>
+      </select>
+    </label>
+
+    <label class="row">
+      How do you rate our work?
+      <input type="range" name="rage" min="0" max="5" step="1" value="0">
+
+</fieldset>
+
+<fieldset class="fieldset">
+
+  <legend>Additional info</legend>
+
+    <label class="row">
+      Comments:
+      <textarea name="description"></textarea>
+    </label>
+
+    <label class="row">
+      Would you recommend us?
+      <select name="recommend" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </label>
+
+</fieldset>
+
+<button type="submit">Submit</button>
+
+</form>
+</body>
+</html>
